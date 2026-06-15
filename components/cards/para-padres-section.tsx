@@ -7,7 +7,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const parentBenefits = [
   { text: "Claridad", detail: "en cada tarea." },
   { text: "Seguimiento", detail: "del progreso." },
-  { text: "Comunicacion", detail: "con docentes." },
+  { text: "Comunicación", detail: "con docentes." },
 ];
 
 const schoolBenefits = [
@@ -97,7 +97,7 @@ export function ParaPadresSection() {
                   }}
                 >
                   <p className="text-sm font-semibold text-primary">
-                    {"Acompanamos a tu familia en cada paso"}
+                    {"Acompañamos a tu familia en cada paso"}
                   </p>
                 </div>
               </CardContent>
@@ -159,7 +159,7 @@ export function ParaPadresSection() {
                   }}
                 >
                   <p className="text-sm font-semibold text-accent">
-                    {"Un aliado para potenciar la ensenanza"}
+                    {"Un aliado para potenciar la enseñanza"}
                   </p>
                 </div>
               </CardContent>

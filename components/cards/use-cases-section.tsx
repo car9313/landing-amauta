@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { BookOpen, Search, Heart, Lightbulb } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { BookOpen, Search, Heart, Lightbulb } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const useCases = [
   {
@@ -11,32 +11,34 @@ const useCases = [
   },
   {
     icon: Lightbulb,
-    text: "Para **explicar** temas dificiles con claridad.",
+    text: "Para **explicar** temas difíciles con claridad.",
   },
   {
     icon: Search,
-    text: "Para **detectar** avances y dificultades del nino.",
+    text: "Para **detectar** avances y dificultades del niño.",
   },
   {
     icon: Heart,
-    text: "Para **acompanar** al nino emocionalmente mientras aprende.",
+    text: "Para **acompañar** al niño emocionalmente mientras aprende.",
   },
-]
+];
 
 function renderBoldText(text: string) {
-  const parts = text.split(/\*\*(.*?)\*\*/)
+  const parts = text.split(/\*\*(.*?)\*\*/);
   return parts.map((part, i) =>
-    i % 2 === 1 ? (
-      <strong key={i}>{part}</strong>
-    ) : (
-      <span key={i}>{part}</span>
-    )
-  )
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : <span key={i}>{part}</span>,
+  );
 }
 
-function UseCaseCard({ item, index }: { item: typeof useCases[number]; index: number }) {
-  const { ref, isVisible } = useScrollReveal()
-  const Icon = item.icon
+function UseCaseCard({
+  item,
+  index,
+}: {
+  item: (typeof useCases)[number];
+  index: number;
+}) {
+  const { ref, isVisible } = useScrollReveal();
+  const Icon = item.icon;
 
   return (
     <div
@@ -59,7 +61,7 @@ function UseCaseCard({ item, index }: { item: typeof useCases[number]; index: nu
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
 export function UseCasesSection() {
@@ -67,7 +69,7 @@ export function UseCasesSection() {
     <section className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-primary md:text-4xl text-balance">
-          Para que se utiliza?
+          ¿Para qué se utiliza?
         </h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {useCases.map((item, index) => (
@@ -76,5 +78,5 @@ export function UseCasesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

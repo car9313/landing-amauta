@@ -44,7 +44,7 @@ export function ParallaxBanner() {
     <section
       ref={ref}
       className="relative h-[80vh] min-h-130 overflow-hidden md:h-[90vh]"
-      aria-label="Amauta acompanando a ninos en el aula"
+      aria-label="Amauta acompañando a niños en el aula"
     >
       {/* Parallax background image */}
       <div
@@ -55,7 +55,7 @@ export function ParallaxBanner() {
           willChange: "transform",
         }}
         role="img"
-        aria-label="Escena de salon de clases con ninos aprendiendo acompanados por Amauta"
+        aria-label="Escena de salón de clases con niños aprendiendo acompañados por Amauta"
       />
 
       {/* Dark overlay */}
@@ -67,10 +67,10 @@ export function ParallaxBanner() {
       {/* Content over parallax */}
       <div className="relative flex h-full flex-col items-center justify-center gap-5 px-4 text-center">
         <p className="text-lg font-semibold text-primary-foreground/80 md:text-2xl">
-          Cuando no entienden... cuando se siente dificil...
+          Cuando no entienden... cuando se siente difícil...
         </p>
         <h2 className="text-4xl font-extrabold text-primary-foreground md:text-6xl lg:text-7xl text-balance">
-          Amauta esta contigo.
+          Amauta está contigo.
         </h2>
         <p className="mt-2 text-2xl font-bold text-accent md:text-3xl">
           Confianza.

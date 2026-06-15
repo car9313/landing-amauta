@@ -106,7 +106,7 @@ export function HeroSection() {
           >
             <Sparkles className="h-4 w-4 text-accent" />
             <span className="text-sm font-bold text-accent">
-              Para ninos de 5 a 9 anos
+              Para niños de 5 a 9 años
             </span>
           </div>
 
@@ -140,9 +140,9 @@ export function HeroSection() {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            La plataforma de acompanamiento academico inteligente. Un mentor
-            digital que guia <strong>paso a paso</strong> el aprendizaje en
-            casa, con <strong>empatia</strong> y <strong>claridad</strong>.
+            La plataforma de acompañamiento académico inteligente. Un mentor
+            digital que guía <strong>paso a paso</strong> el aprendizaje en
+            casa, con <strong>empatía</strong> y <strong>claridad</strong>.
           </p>
 
           {/* CTA Buttons */}
@@ -224,7 +224,7 @@ export function HeroSection() {
             <div className="absolute -right-4 -top-2 z-20 animate-bounce-gentle">
               <div className="rounded-2xl bg-card px-4 py-2 shadow-lg border border-border">
                 <p className="text-sm font-bold text-primary">
-                  {'Hola, aprende conmigo!'}
+                  {'¡Hola, aprende conmigo!'}
                 </p>
               </div>
               <div className="ml-6 h-3 w-3 -translate-y-0.5 rotate-45 bg-card border-b border-r border-border" />
@@ -234,7 +234,7 @@ export function HeroSection() {
             <div className="animate-float relative z-10">
               <Image
                 src="/images/mascot.jpg"
-                alt="Amauta, el mentor ave sabia que acompana a los ninos en su aprendizaje"
+                alt="Amauta, el mentor ave sabia que acompaña a los niños en su aprendizaje"
                 width={420}
                 height={420}
                 className="drop-shadow-2xl"

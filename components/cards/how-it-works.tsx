@@ -8,19 +8,19 @@ const steps = [
     icon: UserPlus,
     number: "1",
     title: "El padre crea su cuenta",
-    description: "Registro rapido y gratuito en menos de un minuto.",
+    description: "Registro rápido y gratuito en menos de un minuto.",
   },
   {
     icon: Users,
     number: "2",
-    title: "Anade a sus hijos",
-    description: "Crea un perfil para cada nino con su edad y nivel.",
+    title: "Añade a sus hijos",
+    description: "Crea un perfil para cada niño con su edad y nivel.",
   },
   {
     icon: Sparkles,
     number: "3",
     title: "Ellos aprenden solos",
-    description: "Los ninos exploran lecciones de forma autonoma y divertida.",
+    description: "Los niños exploran lecciones de forma autónoma y divertida.",
   },
 ];
 
@@ -40,7 +40,7 @@ export function HowItWorks() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          Como funciona
+          Cómo funciona
         </h2>
 
         <ol className="grid gap-8 md:grid-cols-3">

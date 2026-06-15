@@ -26,8 +26,8 @@ const steps = [
   {
     number: 3,
     icon: Heart,
-    title: "Acompana",
-    description: "Acompana en todo el proceso de aprendizaje.",
+    title: "Acompaña",
+    description: "Acompaña en todo el proceso de aprendizaje.",
     color: "bg-primary",
     iconBg: "bg-primary/10",
     iconColor: "text-primary",
@@ -131,7 +131,7 @@ export function HowItWorksSection() {
             </svg>
           </span>
           <h2 className="text-3xl font-extrabold text-primary md:text-4xl text-balance">
-            Como funciona
+            Cómo funciona
           </h2>
         </div>
 

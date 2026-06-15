@@ -8,19 +8,19 @@ const features = [
     icon: WifiOff,
     title: "Sin internet, sin problema",
     description:
-      "Offline total. Los datos se guardan automaticamente y se sincronizan cuando vuelve la conexion.",
+      "Offline total. Los datos se guardan automáticamente y se sincronizan cuando vuelve la conexión.",
   },
   {
     icon: Brain,
     title: "Aprendizaje adaptativo",
     description:
-      "Ejercicios que se ajustan al nivel del nino, avanzando a su propio ritmo y necesidades.",
+      "Ejercicios que se ajustan al nivel del niño, avanzando a su propio ritmo y necesidades.",
   },
   {
     icon: Trophy,
-    title: "Motivacion continua",
+    title: "Motivación continua",
     description:
-      "Niveles, puntos, rachas y logros que mantienen a los ninos motivados dia tras dia.",
+      "Niveles, puntos, rachas y logros que mantienen a los niños motivados día tras día.",
   },
 ];
 

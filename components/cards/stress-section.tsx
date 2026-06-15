@@ -7,13 +7,13 @@ import { useParallax } from "@/hooks/use-parallax";
 
 const benefits = [
   {
-    text: "Evita peleas al hacer tareas: el nino comprende mejor.",
+    text: "Evita peleas al hacer tareas: el niño comprende mejor.",
   },
   {
-    text: "Los padres reciben orientacion clara sin ser expertos.",
+    text: "Los padres reciben orientación clara sin ser expertos.",
   },
   {
-    text: "El nino se siente acompanado y capaz, lo que reduce frustraciones.",
+    text: "El niño se siente acompañado y capaz, lo que reduce frustraciones.",
   },
 ];
 
@@ -37,7 +37,7 @@ export function StressSection() {
           }}
         >
           <h2 className="text-3xl font-extrabold text-primary md:text-4xl text-balance">
-            {"Como Amauta reduce el estres en casa?"}
+            {"¿Cómo Amauta reduce el estrés en casa?"}
           </h2>
           <ul className="mt-8 flex flex-col gap-5">
             {benefits.map((benefit, index) => (
@@ -62,7 +62,7 @@ export function StressSection() {
             ))}
           </ul>
           <p className="mt-8 rounded-xl bg-amauta-blue-light px-6 py-4 text-center text-lg font-bold text-primary">
-            {'Transforma el "no entiendo" en "ahora si puedo!"'}
+            {'¡Transforma el "no entiendo" en "¡ahora sí puedo!"'}
           </p>
         </div>
         <div
@@ -79,7 +79,7 @@ export function StressSection() {
           >
             <Image
               src="/images/branding.jpg"
-              alt="Ninos aprendiendo con Amauta, acompanados por la mascota guia"
+              alt="Niños aprendiendo con Amauta, acompañados por la mascota guía"
               width={480}
               height={360}
               className="rounded-2xl shadow-lg"

@@ -5,28 +5,28 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const stats = [
   { value: "4", label: "materias" },
   { value: "100+", label: "lecciones" },
-  { value: "Sin conexion", label: "siempre disponible" },
-  { value: "5-12", label: "anos" },
+  { value: "Sin conexión", label: "siempre disponible" },
+  { value: "5-12", label: "años" },
 ];
 
 const testimonials = [
   {
     quote:
-      "Mi hija practica matematicas en el bus camino al colegio, sin necesidad de datos. Ha mejorado muchisimo.",
+      "Mi hija practica matemáticas en el bus camino al colegio, sin necesidad de datos. Ha mejorado muchísimo.",
     author: "Carla M.",
-    role: "Madre de Sofia, 7 anos",
+    role: "Madre de Sofía, 7 años",
   },
   {
     quote:
-      "Lo mejor es que aprende sola y se divierte. Las rachas y los logros la mantienen motivada cada dia.",
+      "Lo mejor es que aprende sola y se divierte. Las rachas y los logros la mantienen motivada cada día.",
     author: "Diego R.",
-    role: "Padre de Mateo, 9 anos",
+    role: "Padre de Mateo, 9 años",
   },
   {
     quote:
       "Como profesora, recomiendo Amauta a las familias. El aprendizaje adaptativo realmente marca la diferencia.",
-    author: "Lucia T.",
-    role: "Docente de educacion infantil",
+    author: "Lucía T.",
+    role: "Docente de educación infantil",
   },
 ];
 
@@ -41,7 +41,7 @@ export function StatsTestimonials() {
     >
       <div ref={ref} className="mx-auto max-w-6xl px-4">
         <h2 id="stats-heading" className="sr-only">
-          Estadisticas y testimonios
+          Estadísticas y testimonios
         </h2>
 
         {/* Stats */}

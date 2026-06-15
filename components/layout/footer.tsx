@@ -18,19 +18,19 @@ export function Footer() {
             <span className="text-accent">{"uta"}</span>
           </span>
         </div>
-        <nav className="flex flex-wrap justify-center gap-6" aria-label="Pie de pagina">
+        <nav className="flex flex-wrap justify-center gap-6" aria-label="Pie de página">
           <Link href="#que-es" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-            {"Que es"}
+            {"Qué es"}
           </Link>
           <Link href="#funciones" className="text-sm text-muted-foreground transition-colors hover:text-primary">
             {"Funciones"}
           </Link>
           <Link href="#diferente" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-            {"Por que es diferente"}
+            {"¿Por qué es diferente?"}
           </Link>
         </nav>
         <p className="text-xs text-muted-foreground">
-          {"Amauta "} {new Date().getFullYear()} {" - Sabiduria que aprende contigo."}
+          {"Amauta "} {new Date().getFullYear()} {" - Sabiduría que aprende contigo."}
         </p>
       </div>
     </footer>

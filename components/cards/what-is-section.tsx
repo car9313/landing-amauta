@@ -26,7 +26,7 @@ export function WhatIsSection() {
               </svg>
             </span>
             <h2 className="text-3xl font-extrabold text-primary md:text-4xl text-balance">
-              {"Que es "}
+              {"Qué es "}
               <span className="text-accent">Amauta</span>
             </h2>
           </div>
@@ -45,11 +45,11 @@ export function WhatIsSection() {
           >
             <div className="rounded-2xl bg-amauta-blue-light p-6 md:p-8">
               <p className="text-base leading-relaxed text-foreground md:text-lg">
-                {"Amauta es un acompanamiento academico inteligente que "}
+                {"Amauta es un acompañamiento académico inteligente que "}
                 <strong className="text-primary">
-                  {"guia a cada nino paso a paso"}
+                  {"guía a cada niño paso a paso"}
                 </strong>
-                {", adaptandole a su ritmo y necesidades."}
+                {", adaptándose a su ritmo y necesidades."}
               </p>
               {/* Animated tablet preview */}
               <div

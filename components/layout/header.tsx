@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 
 const navLinks = [
   { label: "Inicio", href: "#hero" },
-  { label: "Que es", href: "#que-es" },
+  { label: "Qué es", href: "#que-es" },
   { label: "Funciones", href: "#funciones" },
-  { label: "Unico", href: "#unico" },
+  { label: "Único", href: "#unico" },
 ]
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
         </a>
 
         {/* Desktop navigation */}
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Navegacion principal">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Navegación principal">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -56,7 +56,7 @@ export function Header() {
           className="flex items-center justify-center rounded-lg p-2 text-foreground md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
-          aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -66,7 +66,7 @@ export function Header() {
       {isOpen && (
         <nav
           className="border-t border-border bg-card px-4 pb-4 pt-2 md:hidden"
-          aria-label="Navegacion movil"
+          aria-label="Navegación móvil"
         >
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (

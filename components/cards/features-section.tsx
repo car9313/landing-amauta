@@ -8,9 +8,9 @@ import { useParallax } from "@/hooks/use-parallax";
 const features = [
   {
     icon: BarChart3,
-    title: "Analisis de progreso",
+    title: "Análisis de progreso",
     description:
-      "Detecta fortalezas y dificultades del nino de forma clara y visual.",
+      "Detecta fortalezas y dificultades del niño de forma clara y visual.",
   },
   {
     icon: GraduationCap,
@@ -22,7 +22,7 @@ const features = [
     icon: Bot,
     title: "Agente inteligente",
     description:
-      "Un personaje guia interactivo que explica, motiva y acompana al nino.",
+      "Un personaje guía interactivo que explica, motiva y acompaña al niño.",
   },
 ];
 

@@ -8,8 +8,8 @@ import { Button } from "../ui/button";
 
 const uniquePoints = [
   "Inspirado en la figura del maestro sabio.",
-  "Diseno amigable, culturalmente hispano y adaptado a ninos.",
-  "Pensado para crecer junto a cada nino, con empatia y estructura.",
+  "Diseño amigable, culturalmente hispano y adaptado a niños.",
+  "Pensado para crecer junto a cada niño, con empatía y estructura.",
 ];
 
 export function UniqueSection() {
@@ -31,7 +31,7 @@ export function UniqueSection() {
           }}
         >
           <h2 className="text-3xl font-extrabold text-primary md:text-4xl text-balance">
-            {"Que lo hace único?"}
+            {"¿Qué lo hace único?"}
           </h2>
           <ul className="mt-8 flex flex-col gap-5">
             {uniquePoints.map((point, index) => (
@@ -78,7 +78,7 @@ export function UniqueSection() {
           >
             <Image
               src="/images/mascot.jpg"
-              alt="Amauta, el ave sabia que guia el aprendizaje"
+              alt="Amauta, el ave sabia que guía el aprendizaje"
               width={320}
               height={320}
               className="drop-shadow-lg"

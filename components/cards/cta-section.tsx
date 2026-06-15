@@ -73,7 +73,7 @@ export function CtaSection() {
           <h2 className="text-3xl font-extrabold text-primary-foreground md:text-5xl text-balance">
             {"Aprende a ver"}
             <br />
-            <span className="text-accent">mas lejos.</span>
+            <span className="text-accent">más lejos.</span>
           </h2>
 
           <div
@@ -87,7 +87,7 @@ export function CtaSection() {
               Amauta
             </p>
             <p className="text-sm text-primary-foreground/60">
-              Sabiduria que aprende contigo
+              Sabiduría que aprende contigo
             </p>
           </div>
 
@@ -113,7 +113,7 @@ export function CtaSection() {
               size="lg"
               className="min-h-14 rounded-full border-primary-foreground/30 bg-transparent px-8 text-lg font-bold text-primary-foreground transition-transform hover:scale-105 hover:bg-primary-foreground/10"
             >
-              <a href="#que-es">Conocer mas</a>
+              <a href="#que-es">Conocer más</a>
             </Button>
           </div>
 
