@@ -1,13 +1,13 @@
-import type { Metadata, Viewport } from "next"
-import { Nunito } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type { Metadata, Viewport } from "next";
+import { Nunito } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-nunito",
   display: "swap",
-})
+});
 
 export const metadata: Metadata = {
   title: "Amauta - Sabiduria que aprende contigo",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Amauta",
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor: "#2B5EA7",
@@ -40,12 +40,12 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="es">
@@ -54,5 +54,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

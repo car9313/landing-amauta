@@ -1,19 +1,23 @@
-"use client"
+"use client";
 
-import { Check } from "lucide-react"
-import Image from "next/image"
-import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { useParallax } from "@/hooks/use-parallax"
+import { Check } from "lucide-react";
+import Image from "next/image";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallax } from "@/hooks/use-parallax";
+import { Button } from "../ui/button";
 
 const uniquePoints = [
   "Inspirado en la figura del maestro sabio.",
   "Diseno amigable, culturalmente hispano y adaptado a ninos.",
   "Pensado para crecer junto a cada nino, con empatia y estructura.",
-]
+];
 
 export function UniqueSection() {
-  const { ref: textRef, isVisible: textVisible } = useScrollReveal()
-  const { ref: mascotParallax, offset: mascotOffset } = useParallax({ speed: 0.2, direction: "down" })
+  const { ref: textRef, isVisible: textVisible } = useScrollReveal();
+  const { ref: mascotParallax, offset: mascotOffset } = useParallax({
+    speed: 0.2,
+    direction: "down",
+  });
 
   return (
     <section id="diferente" className="bg-amauta-blue-light py-16 md:py-24">
@@ -27,7 +31,7 @@ export function UniqueSection() {
           }}
         >
           <h2 className="text-3xl font-extrabold text-primary md:text-4xl text-balance">
-            {"Que lo hace unico?"}
+            {"Que lo hace único?"}
           </h2>
           <ul className="mt-8 flex flex-col gap-5">
             {uniquePoints.map((point, index) => (
@@ -49,6 +53,23 @@ export function UniqueSection() {
               </li>
             ))}
           </ul>
+          <div
+            className="mt-8 flex flex-col gap-4 sm:flex-row"
+            /*  style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(15px)",
+              transitionDelay: "600ms",
+              transition: "all 0.5s ease-out",
+            }} */
+          >
+            <Button
+              asChild
+              size="lg"
+              className="min-h-14 rounded-full bg-accent px-10 text-lg font-bold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90 animate-gentle-pulse"
+            >
+              <a href="#empezar">Comenzar ahora</a>
+            </Button>
+          </div>
         </div>
         <div className="flex flex-1 justify-center" ref={mascotParallax}>
           <div
@@ -66,5 +87,5 @@ export function UniqueSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

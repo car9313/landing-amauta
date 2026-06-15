@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { useParallax } from "@/hooks/use-parallax"
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallax } from "@/hooks/use-parallax";
 
 export function CtaSection() {
-  const { ref: contentRef, isVisible } = useScrollReveal()
-  const { ref: bgRef, offset } = useParallax({ speed: 0.12 })
+  const { ref: contentRef, isVisible } = useScrollReveal();
+  const { ref: bgRef, offset } = useParallax({ speed: 0.12 });
 
   return (
     <section
@@ -41,7 +41,9 @@ export function CtaSection() {
           className="flex shrink-0 justify-center transition-all duration-700 ease-out"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateX(0) scale(1)" : "translateX(-30px) scale(0.9)",
+            transform: isVisible
+              ? "translateX(0) scale(1)"
+              : "translateX(-30px) scale(0.9)",
           }}
         >
           <div className="relative">
@@ -101,7 +103,7 @@ export function CtaSection() {
             <Button
               asChild
               size="lg"
-              className="min-h-[56px] rounded-full bg-accent px-10 text-lg font-bold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90 animate-gentle-pulse"
+              className="min-h-14 rounded-full bg-accent px-10 text-lg font-bold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90 animate-gentle-pulse"
             >
               <a href="#empezar">Comenzar ahora</a>
             </Button>
@@ -109,7 +111,7 @@ export function CtaSection() {
               asChild
               variant="outline"
               size="lg"
-              className="min-h-[56px] rounded-full border-primary-foreground/30 bg-transparent px-8 text-lg font-bold text-primary-foreground transition-transform hover:scale-105 hover:bg-primary-foreground/10"
+              className="min-h-14 rounded-full border-primary-foreground/30 bg-transparent px-8 text-lg font-bold text-primary-foreground transition-transform hover:scale-105 hover:bg-primary-foreground/10"
             >
               <a href="#que-es">Conocer mas</a>
             </Button>
@@ -127,5 +129,5 @@ export function CtaSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import { BarChart3, GraduationCap, Bot } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { useParallax } from "@/hooks/use-parallax"
+import { BarChart3, GraduationCap, Bot } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallax } from "@/hooks/use-parallax";
 
 const features = [
   {
     icon: BarChart3,
     title: "Analisis de progreso",
-    description: "Detecta fortalezas y dificultades del nino de forma clara y visual.",
+    description:
+      "Detecta fortalezas y dificultades del nino de forma clara y visual.",
   },
   {
     icon: GraduationCap,
@@ -23,11 +24,17 @@ const features = [
     description:
       "Un personaje guia interactivo que explica, motiva y acompana al nino.",
   },
-]
+];
 
-function FeatureCard({ feature, index }: { feature: typeof features[number]; index: number }) {
-  const { ref, isVisible } = useScrollReveal()
-  const Icon = feature.icon
+function FeatureCard({
+  feature,
+  index,
+}: {
+  feature: (typeof features)[number];
+  index: number;
+}) {
+  const { ref, isVisible } = useScrollReveal();
+  const Icon = feature.icon;
 
   return (
     <div
@@ -35,7 +42,9 @@ function FeatureCard({ feature, index }: { feature: typeof features[number]; ind
       className="transition-all duration-700 ease-out"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.95)",
+        transform: isVisible
+          ? "translateY(0) scale(1)"
+          : "translateY(40px) scale(0.95)",
         transitionDelay: `${index * 150}ms`,
       }}
     >
@@ -44,20 +53,18 @@ function FeatureCard({ feature, index }: { feature: typeof features[number]; ind
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
             <Icon className="h-8 w-8 text-primary" aria-hidden="true" />
           </div>
-          <h3 className="text-lg font-bold text-foreground">
-            {feature.title}
-          </h3>
+          <h3 className="text-lg font-bold text-foreground">{feature.title}</h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             {feature.description}
           </p>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
 export function FeaturesSection() {
-  const { ref: bgRef, offset: bgOffset } = useParallax({ speed: 0.1 })
+  const { ref: bgRef, offset: bgOffset } = useParallax({ speed: 0.1 });
 
   return (
     <section
@@ -88,5 +95,5 @@ export function FeaturesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

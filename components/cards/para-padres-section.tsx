@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { Check, Users } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { Check, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const parentBenefits = [
   { text: "Claridad", detail: "en cada tarea." },
   { text: "Seguimiento", detail: "del progreso." },
   { text: "Comunicacion", detail: "con docentes." },
-]
+];
 
 const schoolBenefits = [
   { text: "Refuerza", detail: "el aprendizaje." },
   { text: "Datos", detail: "de progreso." },
   { text: "Apoyo", detail: "complementario." },
-]
+];
 
 function BenefitList({
   items,
   isVisible,
   delayBase,
 }: {
-  items: typeof parentBenefits
-  isVisible: boolean
-  delayBase: number
+  items: typeof parentBenefits;
+  isVisible: boolean;
+  delayBase: number;
 }) {
   return (
     <ul className="flex flex-col gap-4">
@@ -46,15 +46,15 @@ function BenefitList({
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
 export function ParaPadresSection() {
-  const { ref: padresRef, isVisible: padresVisible } = useScrollReveal()
-  const { ref: colegiosRef, isVisible: colegiosVisible } = useScrollReveal()
+  const { ref: padresRef, isVisible: padresVisible } = useScrollReveal();
+  const { ref: colegiosRef, isVisible: colegiosVisible } = useScrollReveal();
 
   return (
-    <section className="bg-card py-16 md:py-24">
+    <section className="bg-linear-to-br from-amauta-blue-light via-background to-amauta-orange-light/30 py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4">
         <div className="grid gap-8 md:grid-cols-2">
           {/* Para Padres */}
@@ -69,7 +69,10 @@ export function ParaPadresSection() {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
-                    <Users className="h-6 w-6 text-primary" aria-hidden="true" />
+                    <Users
+                      className="h-6 w-6 text-primary"
+                      aria-hidden="true"
+                    />
                   </div>
                   <h2 className="text-2xl font-extrabold text-primary md:text-3xl">
                     Para Padres
@@ -107,7 +110,9 @@ export function ParaPadresSection() {
               className="h-full border-none shadow-md transition-all duration-700 ease-out"
               style={{
                 opacity: colegiosVisible ? 1 : 0,
-                transform: colegiosVisible ? "translateY(0)" : "translateY(40px)",
+                transform: colegiosVisible
+                  ? "translateY(0)"
+                  : "translateY(40px)",
                 transitionDelay: "150ms",
               }}
             >
@@ -163,5 +168,5 @@ export function ParaPadresSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

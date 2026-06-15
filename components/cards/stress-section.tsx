@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Check } from "lucide-react"
-import Image from "next/image"
-import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { useParallax } from "@/hooks/use-parallax"
+import { Check } from "lucide-react";
+import Image from "next/image";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallax } from "@/hooks/use-parallax";
 
 const benefits = [
   {
@@ -15,16 +15,19 @@ const benefits = [
   {
     text: "El nino se siente acompanado y capaz, lo que reduce frustraciones.",
   },
-]
+];
 
 export function StressSection() {
-  const { ref: textRef, isVisible: textVisible } = useScrollReveal()
-  const { ref: imgRef, isVisible: imgVisible } = useScrollReveal()
-  const { ref: parallaxRef, offset } = useParallax({ speed: 0.15, direction: "down" })
+  const { ref: textRef, isVisible: textVisible } = useScrollReveal();
+  const { ref: imgRef, isVisible: imgVisible } = useScrollReveal();
+  const { ref: parallaxRef, offset } = useParallax({
+    speed: 0.15,
+    direction: "down",
+  });
 
   return (
-    <section className="bg-card py-16 md:py-24">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 md:flex-row">
+    <section className="bg-background py-16 md:py-24">
+      <div className="mx-auto  flex max-w-5xl flex-col items-center gap-12 px-4 md:flex-row">
         <div
           ref={textRef}
           className="flex flex-1 flex-col transition-all duration-700 ease-out"
@@ -43,7 +46,9 @@ export function StressSection() {
                 className="flex items-start gap-3 transition-all duration-500 ease-out"
                 style={{
                   opacity: textVisible ? 1 : 0,
-                  transform: textVisible ? "translateX(0)" : "translateX(-20px)",
+                  transform: textVisible
+                    ? "translateX(0)"
+                    : "translateX(-20px)",
                   transitionDelay: `${300 + index * 150}ms`,
                 }}
               >
@@ -68,7 +73,10 @@ export function StressSection() {
             transform: imgVisible ? "translateX(0)" : "translateX(40px)",
           }}
         >
-          <div ref={parallaxRef} style={{ transform: `translateY(${offset}px)` }}>
+          <div
+            ref={parallaxRef}
+            style={{ transform: `translateY(${offset}px)` }}
+          >
             <Image
               src="/images/branding.jpg"
               alt="Ninos aprendiendo con Amauta, acompanados por la mascota guia"
@@ -80,5 +88,5 @@ export function StressSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
