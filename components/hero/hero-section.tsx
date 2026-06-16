@@ -1,42 +1,76 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { useParallax } from "@/hooks/use-parallax"
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { useParallax } from "@/hooks/use-parallax";
+import { CTA_URL } from "@/lib/constants";
 import {
-  Star,
-  Pencil,
-  BookOpen,
   Sparkles,
-  Heart,
-  CloudSun,
-} from "lucide-react"
+  Star,
+  WifiOff,
+  Users,
+  ShieldCheck,
+  BookOpen,
+} from "lucide-react";
 
 const floatingIcons = [
-  { Icon: Star, className: "text-amauta-orange", size: 22, delay: "0s", x: "8%", y: "15%" },
-  { Icon: Pencil, className: "text-primary", size: 20, delay: "0.8s", x: "88%", y: "12%" },
-  { Icon: BookOpen, className: "text-amauta-orange", size: 24, delay: "1.6s", x: "78%", y: "70%" },
-  { Icon: Sparkles, className: "text-accent", size: 18, delay: "2.4s", x: "12%", y: "75%" },
-  { Icon: Heart, className: "text-amauta-orange/60", size: 16, delay: "3.2s", x: "50%", y: "8%" },
-  { Icon: CloudSun, className: "text-primary/40", size: 28, delay: "1.2s", x: "92%", y: "40%" },
-]
+  {
+    Icon: Sparkles,
+    className: "text-accent",
+    size: 18,
+    delay: "0s",
+    x: "10%",
+    y: "18%",
+  },
+  {
+    Icon: Star,
+    className: "text-amauta-orange",
+    size: 22,
+    delay: "1s",
+    x: "86%",
+    y: "14%",
+  },
+  {
+    Icon: BookOpen,
+    className: "text-primary/50",
+    size: 22,
+    delay: "1.8s",
+    x: "80%",
+    y: "72%",
+  },
+  {
+    Icon: WifiOff,
+    className: "text-amauta-orange/70",
+    size: 20,
+    delay: "2.4s",
+    x: "14%",
+    y: "76%",
+  },
+];
+
+const highlights = ["Offline-first", "Aprendizaje guiado", "Para casa y aula"];
+
+const audiencePills = [
+  { icon: Users, label: "Niños de 5 a 9 años" },
+  { icon: ShieldCheck, label: "Acompañamiento seguro" },
+];
 
 export function HeroSection() {
-  const { ref: bgRef, offset: bgOffset } = useParallax({ speed: 0.1 })
-  const [mounted, setMounted] = useState(false)
+  const { ref: bgRef, offset: bgOffset } = useParallax({ speed: 0.1 });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center overflow-hidden bg-amauta-blue-light"
       ref={bgRef}
+      className="relative flex min-h-[90vh] scroll-mt-20 items-center overflow-hidden bg-amauta-blue-light"
     >
-      {/* Animated background waves */}
+      {/* Background */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <svg
           className="absolute bottom-0 left-0 w-full animate-wave"
@@ -49,6 +83,7 @@ export function HeroSection() {
             className="fill-background/50"
           />
         </svg>
+
         <svg
           className="absolute bottom-0 left-0 w-full animate-wave-slow"
           viewBox="0 0 1440 220"
@@ -61,18 +96,13 @@ export function HeroSection() {
           />
         </svg>
 
-        {/* Floating decorative circles */}
         <div
-          className="absolute left-[5%] top-[20%] h-40 w-40 rounded-full bg-primary/5 animate-float-gentle"
-          style={{ transform: `translateY(${bgOffset * 0.4}px)` }}
+          className="absolute left-[6%] top-[20%] h-36 w-36 rounded-full bg-primary/5 animate-float-gentle"
+          style={{ transform: `translateY(${bgOffset * 0.35}px)` }}
         />
         <div
-          className="absolute right-[10%] top-[10%] h-24 w-24 rounded-full bg-accent/10 animate-float-gentle-reverse"
-          style={{ transform: `translateY(${bgOffset * -0.25}px)` }}
-        />
-        <div
-          className="absolute left-[40%] bottom-[25%] h-32 w-32 rounded-full bg-amauta-orange/5 animate-float-gentle"
-          style={{ animationDelay: "1s", transform: `translateY(${bgOffset * 0.2}px)` }}
+          className="absolute right-[10%] top-[12%] h-24 w-24 rounded-full bg-accent/10 animate-float-gentle-reverse"
+          style={{ transform: `translateY(${bgOffset * -0.2}px)` }}
         />
       </div>
 
@@ -80,178 +110,144 @@ export function HeroSection() {
       {floatingIcons.map(({ Icon, className, size, delay, x, y }, i) => (
         <div
           key={i}
-          className="absolute animate-icon-float pointer-events-none"
-          style={{
-            left: x,
-            top: y,
-            animationDelay: delay,
-          }}
+          className="absolute pointer-events-none animate-icon-float"
+          style={{ left: x, top: y, animationDelay: delay }}
           aria-hidden="true"
         >
           <Icon className={className} size={size} />
         </div>
       ))}
 
-      {/* Main hero content */}
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col-reverse items-center gap-8 px-4 py-16 md:flex-row md:gap-12 lg:gap-20">
-        {/* Text content with staggered animations */}
-        <div className="flex flex-1 flex-col items-center text-center md:items-start md:text-left">
-          {/* Tagline chip */}
-          <div
-            className={`mb-4 inline-flex items-center gap-2 rounded-full bg-accent/15 px-4 py-2 transition-all duration-700 ${
-              mounted
-                ? "translate-y-0 opacity-100"
-                : "translate-y-6 opacity-0"
-            }`}
-          >
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-14 lg:gap-20">
+        {/* Text */}
+        <div
+          className={`flex flex-col items-center text-center transition-all duration-700 md:items-start md:text-left ${
+            mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent/15 px-4 py-2">
             <Sparkles className="h-4 w-4 text-accent" />
             <span className="text-sm font-bold text-accent">
-              Para niños de 5 a 9 años
+              Aprendizaje guiado para niños de 5 a 9 años
             </span>
           </div>
 
-          {/* Main title */}
-          <h1
-            className={`text-5xl font-extrabold leading-tight tracking-tight text-primary md:text-6xl lg:text-7xl text-balance transition-all duration-700 delay-150 ${
-              mounted
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            Ama<span className="text-accent animate-color-shift">uta</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className={`mt-3 text-lg font-semibold text-muted-foreground md:text-xl transition-all duration-700 delay-300 ${
-              mounted
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            Sabiduria que aprende contigo.
-          </p>
-
-          {/* Description */}
-          <p
-            className={`mt-6 max-w-lg text-base leading-relaxed text-foreground md:text-lg transition-all duration-700 delay-[450ms] ${
-              mounted
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            La plataforma de acompañamiento académico inteligente. Un mentor
-            digital que guía <strong>paso a paso</strong> el aprendizaje en
-            casa, con <strong>empatía</strong> y <strong>claridad</strong>.
-          </p>
-
-          {/* CTA Buttons */}
-          <div
-            className={`mt-8 flex flex-col gap-4 sm:flex-row transition-all duration-700 delay-[600ms] ${
-              mounted
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <Button
-              asChild
-              size="lg"
-              className="group relative min-h-[52px] rounded-full bg-accent px-8 text-base font-bold text-accent-foreground hover:bg-accent/90 overflow-hidden"
-            >
-              <a href="#cta">
-                <span className="relative z-10 flex items-center gap-2">
-                  Quiero probarlo
-                  <Sparkles className="h-4 w-4 transition-transform group-hover:rotate-12 group-hover:scale-110" />
-                </span>
-                <span className="absolute inset-0 bg-amauta-orange/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="min-h-[52px] rounded-full border-2 border-primary px-8 text-base font-bold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              <a href="#que-es">Conocer mas</a>
-            </Button>
+          <div className="flex flex-wrap justify-center gap-2 md:justify-start">
+            {audiencePills.map(({ icon: Icon, label }) => (
+              <span
+                key={label}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-sm font-medium text-muted-foreground shadow-sm"
+              >
+                <Icon className="h-4 w-4 text-amauta-orange" />
+                {label}
+              </span>
+            ))}
           </div>
 
-          {/* Trust indicators */}
-          <div
-            className={`mt-10 flex items-center gap-6 transition-all duration-700 delay-[750ms] ${
-              mounted
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Star
-                    key={s}
-                    className="h-4 w-4 fill-amauta-orange text-amauta-orange"
-                  />
-                ))}
-              </div>
-              <span className="text-sm font-semibold text-muted-foreground">
-                Culturalmente hispano
+          <h1 className="mt-5 max-w-xl text-balance text-5xl font-extrabold leading-tight tracking-tight text-primary md:text-6xl lg:text-7xl">
+            Tu hijo aprende a su ritmo,
+            <span className="text-accent"> con confianza y motivación.</span>
+          </h1>
+
+          <p className="mt-5 max-w-lg text-base leading-relaxed text-foreground md:text-lg">
+            Amauta acompaña el aprendizaje con actividades guiadas para casa y
+            aula, y una experiencia pensada para seguir avanzando incluso cuando
+            la conexión no está disponible.
+          </p>
+
+          <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+            {highlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary"
+              >
+                {item}
               </span>
-            </div>
-            <div className="hidden h-5 w-px bg-border sm:block" />
-            <div className="hidden items-center gap-1.5 sm:flex">
-              <Heart className="h-4 w-4 fill-amauta-orange/60 text-amauta-orange" />
-              <span className="text-sm font-semibold text-muted-foreground">
-                Hecho con amor
-              </span>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              className="group min-h-[52px] overflow-hidden rounded-full bg-accent px-8 text-base font-bold text-accent-foreground hover:bg-accent/90"
+            >
+              <a href={CTA_URL}>
+                <span className="relative z-10 flex items-center gap-2">
+                  Probar Amauta gratis
+                  <Sparkles className="h-4 w-4 transition-transform group-hover:rotate-12 group-hover:scale-110" />
+                </span>
+              </a>
+            </Button>
+
+            <p className="mt-3 text-sm text-muted-foreground">
+              Sin internet, sin problema.
+            </p>
+
+            <div className="mt-6 animate-fade-in-up">
+              <p className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-5 py-2 text-sm font-semibold text-muted-foreground shadow-sm">
+                <span className="relative">
+                  <span className="animate-gentle-pulse text-accent">
+                    +100 familias
+                  </span>
+                </span>
+                ya confían en Amauta
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Mascot with animated entrance and floating effect */}
+        {/* Mascot */}
         <div
-          className={`flex flex-1 justify-center transition-all duration-1000 delay-200 ${
-            mounted ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-90"
+          className={`flex justify-center transition-all duration-1000 ${
+            mounted
+              ? "translate-y-0 scale-100 opacity-100"
+              : "translate-y-10 scale-95 opacity-0"
           }`}
         >
-          <div className="relative">
-            {/* Glow ring behind mascot */}
+          <div className="relative w-full max-w-130">
             <div
-              className="absolute inset-0 m-auto h-[85%] w-[85%] rounded-full bg-accent/10 animate-pulse-ring"
+              className="absolute inset-0 mx-auto h-[82%] w-[82%] rounded-full bg-accent/10 animate-pulse-ring"
               aria-hidden="true"
             />
 
-            {/* Speech bubble */}
-            <div className="absolute -right-4 -top-2 z-20 animate-bounce-gentle">
-              <div className="rounded-2xl bg-card px-4 py-2 shadow-lg border border-border">
+            <div className="absolute -right-2 top-2 z-20 animate-bounce-gentle">
+              <div className="rounded-2xl border border-border bg-card px-4 py-2 shadow-lg">
                 <p className="text-sm font-bold text-primary">
-                  {'¡Hola, aprende conmigo!'}
+                  ¡Hola, aprende conmigo!
                 </p>
               </div>
-              <div className="ml-6 h-3 w-3 -translate-y-0.5 rotate-45 bg-card border-b border-r border-border" />
+              <div className="ml-6 h-3 w-3 -translate-y-0.5 rotate-45 border-b border-r border-border bg-card" />
             </div>
 
-            {/* Mascot image */}
-            <div className="animate-float relative z-10">
+            <div className="relative z-10 animate-float">
               <Image
-                src="/images/mascot.jpg"
+                src="/images/mascota.png"
                 alt="Amauta, el mentor ave sabia que acompaña a los niños en su aprendizaje"
-                width={420}
-                height={420}
-                className="drop-shadow-2xl"
+                width={520}
+                height={520}
                 priority
+                className="drop-shadow-2xl"
               />
             </div>
 
-            {/* Floating sparkle decorations around mascot */}
-            <div className="absolute -left-4 top-1/4 animate-sparkle" aria-hidden="true">
+            <div
+              className="absolute -left-2 top-1/4 animate-sparkle"
+              aria-hidden="true"
+            >
               <Sparkles className="h-6 w-6 text-accent" />
             </div>
-            <div className="absolute -right-6 bottom-1/3 animate-sparkle" style={{ animationDelay: "0.5s" }} aria-hidden="true">
-              <Star className="h-5 w-5 text-amauta-orange fill-amauta-orange" />
+
+            <div
+              className="absolute -right-4 bottom-1/3 animate-sparkle"
+              style={{ animationDelay: "0.5s" }}
+              aria-hidden="true"
+            >
+              <Star className="h-5 w-5 fill-amauta-orange text-amauta-orange" />
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

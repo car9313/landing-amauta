@@ -24,8 +24,11 @@ export const metadata: Metadata = {
     "homeschool",
   ],
   icons: {
-    icon: "/icons/icon-192x192.jpg",
-    apple: "/icons/icon-192x192.jpg",
+    icon: [
+      { url: "/icons/icon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/icon-512x512.jpg", type: "image/jpeg", sizes: "512x512" },
+    ],
+    apple: "/icons/icon-192x192.png",
   },
   appleWebApp: {
     capable: true,

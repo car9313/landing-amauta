@@ -1,9 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallax } from "@/hooks/use-parallax";
+import { CTA_URL } from "@/lib/constants";
 
 export function CtaSection() {
   const { ref: contentRef, isVisible } = useScrollReveal();
@@ -12,7 +12,7 @@ export function CtaSection() {
   return (
     <section
       id="cta"
-      className="relative overflow-hidden bg-primary py-20 md:py-28"
+      className="relative overflow-hidden bg-primary scroll-mt-20 py-20 md:py-28"
       ref={bgRef}
     >
       {/* Parallax decorative circles */}
@@ -51,12 +51,12 @@ export function CtaSection() {
               className="absolute inset-0 -m-6 rounded-full bg-primary-foreground/10 animate-pulse-ring"
               aria-hidden="true"
             />
-            <Image
-              src="/images/mascot.jpg"
+            <img
+              src="/icons/icon-192x192.png"
               alt="Amauta, el ave sabia"
               width={200}
               height={200}
-              className="relative animate-float drop-shadow-lg"
+              className="relative animate-float rounded-full drop-shadow-lg"
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ export function CtaSection() {
               size="lg"
               className="min-h-14 rounded-full bg-accent px-10 text-lg font-bold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90 animate-gentle-pulse"
             >
-              <a href="#empezar">Comenzar ahora</a>
+              <a href={CTA_URL}>Probar Amauta gratis</a>
             </Button>
             <Button
               asChild
