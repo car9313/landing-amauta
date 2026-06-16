@@ -66,7 +66,7 @@ function UseCaseCard({
 
 export function UseCasesSection() {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section id="uso" className="bg-background py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-primary md:text-4xl text-balance">
           ¿Para qué se utiliza?

@@ -1,24 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Inicio", href: "#hero" },
+  { label: "Caracteristicas", href: "#features" },
   { label: "Qué es", href: "#que-es" },
+  { label: "Uso", href: "#uso" },
   { label: "Funciones", href: "#funciones" },
-  { label: "Único", href: "#unico" },
-]
+];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#hero" className="flex items-center gap-2" aria-label="Amauta - Inicio">
+        <a
+          href="#hero"
+          className="flex items-center gap-2"
+          aria-label="Amauta - Inicio"
+        >
           <Image
             src="/images/mascot.jpg"
             alt=""
@@ -32,7 +37,10 @@ export function Header() {
         </a>
 
         {/* Desktop navigation */}
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Navegación principal">
+        <nav
+          className="hidden items-center gap-6 md:flex"
+          aria-label="Navegación principal"
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -92,5 +100,5 @@ export function Header() {
         </nav>
       )}
     </header>
-  )
+  );
 }

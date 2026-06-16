@@ -20,7 +20,7 @@ export function UniqueSection() {
   });
 
   return (
-    <section id="diferente" className="bg-amauta-blue-light py-16 md:py-24">
+    <section id="que-es" className="bg-amauta-blue-light py-16 md:py-24">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 md:flex-row-reverse">
         <div
           ref={textRef}
